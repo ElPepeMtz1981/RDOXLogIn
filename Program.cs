@@ -75,6 +75,7 @@ namespace RDOXMES.Login
             {
                 Console.WriteLine($"Conexión detectada desde entorno: {connection.Split(';')[0]}");
             }
+
             builder.Services.AddDbContext<ViewUserDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("Users")));
             builder.Services.AddControllers();            
             builder.Services.AddEndpointsApiExplorer();            
