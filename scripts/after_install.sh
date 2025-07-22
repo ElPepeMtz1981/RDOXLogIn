@@ -15,6 +15,6 @@ chmod -R u+rwX /home/ubuntu/rdoxloginrssc
 cd /home/ubuntu/rdoxloginrssc
 
 # 👉 Publica en la carpeta de artefactos
-$DOTNET_ROOT/dotnet publish Login.csproj -c Release -o /home/ubuntu/login
+$DOTNET_ROOT/dotnet publish Login.csproj -c Release -o /home/ubuntu/rdoxlogin
 
 echo "✅ Publicación completada en /home/ubuntu/login."
