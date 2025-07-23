@@ -1,3 +1,3 @@
 ﻿#!/bin/bash
-mkdir -p /home/ubuntu/rdologin
-mkdir -p /home/ubuntu/rdologinsc
+mkdir -p /home/ubuntu/rdoxlogin
+mkdir -p /home/ubuntu/rdoxloginsc
