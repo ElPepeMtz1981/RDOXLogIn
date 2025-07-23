@@ -1,8 +1,8 @@
 ﻿version: 0.0
 os: linux
 files:
-  - source: ElPepeMtz1981-RDOXLogin-*/
-    destination: /home/ubuntu/rdoxlogin
+  - source: /
+    destination: /home/ubuntu/rdoxloginsc
 hooks:
   BeforeInstall:
     - location: scripts/before_install.sh
