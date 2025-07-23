@@ -74,7 +74,7 @@ namespace RDOXMES.Login
             }
             else
             {
-                Console.WriteLine($"Conexión detectada desde entorno: {connection.Split(';')[0]}");
+                Console.WriteLine($"Conexión detectada desde  entorno: {connection.Split(';')[0]}");
             }
 
             builder.Services.AddDbContext<ViewUserDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("Users")));
