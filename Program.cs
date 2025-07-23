@@ -15,6 +15,7 @@ namespace RDOXMES.Login
             var jwtKey = "RDOXMES_ClaveJWT_SuperSegura_2025_Produccion_ClaveExtra";
             builder.Configuration["Jwt:Key"] = jwtKey;
             builder.Configuration["Jwt:Issuer"] = "JwtLoginApi";
+
             builder.Services.AddSwaggerGen(options =>
             {
                 options.AddSecurityDefinition("Bearer", new Microsoft.OpenApi.Models.OpenApiSecurityScheme
