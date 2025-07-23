@@ -70,11 +70,11 @@ namespace RDOXMES.Login
             if (string.IsNullOrWhiteSpace(connection) || connection.Contains("USE_ENV_VARIABLE"))
             {
                 builder.Logging.AddConsole();
-                Console.WriteLine("La cadena de conexión no fue cargada desde el entorno");
+                Console.WriteLine("connection string not loaded");
             }
             else
             {
-                Console.WriteLine($"Conexión detectada desde  entorno: {connection.Split(';')[0]}");
+                Console.WriteLine($"conections string loaded: {connection.Split(';')[0]}");
             }
 
             builder.Services.AddDbContext<ViewUserDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("Users")));
