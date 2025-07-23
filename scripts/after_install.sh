@@ -18,7 +18,7 @@ cd /home/ubuntu/rdoxloginsc
 
 echo "start publish" >> /home/ubuntu/rdoxlogin.log
 # 👉 Publica en la carpeta de artefactos
-$DOTNET_ROOT/dotnet publish Login.csproj -c Release -o /home/ubuntu/rdoxlogin
+$DOTNET_ROOT/dotnet publish RDOXLogin.csproj -c Release -o /home/ubuntu/rdoxlogin
 
 echo "End publish" >> /home/ubuntu/rdoxlogin.log
 
