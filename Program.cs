@@ -70,7 +70,7 @@ namespace RDOXMES.Login
             if (string.IsNullOrWhiteSpace(connection) || connection.Contains("USE_ENV_VARIABLE"))
             {
                 builder.Logging.AddConsole();
-                Console.WriteLine("La cadena de conexión no fue cargada desde el entorno.");
+                Console.WriteLine("La cadena de conexión no fue cargada desde el entorno");
             }
             else
             {
