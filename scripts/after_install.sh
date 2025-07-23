@@ -7,12 +7,12 @@ echo "🔧 Ejecutando after_install.sh..."
 export DOTNET_ROOT=$HOME/.dotnet
 export PATH=$HOME/.dotnet:$PATH
 
-sudo chown -R ubuntu:ubuntu /home/ubuntu/rdoxloginrssc
+sudo chown -R ubuntu:ubuntu /home/ubuntu/rdoxloginsc
 
-chmod -R u+rwX /home/ubuntu/rdoxloginrssc
+chmod -R u+rwX /home/ubuntu/rdoxloginsc
 
 # 👉 Navega al código fuente
-cd /home/ubuntu/rdoxloginrssc
+cd /home/ubuntu/rdoxloginsc
 
 # 👉 Publica en la carpeta de artefactos
 $DOTNET_ROOT/dotnet publish Login.csproj -c Release -o /home/ubuntu/rdoxlogin
