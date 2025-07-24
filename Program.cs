@@ -79,7 +79,12 @@ namespace RDOXMES.Login
 
             builder.Services.AddDbContext<ViewUserDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("Users")));
             builder.Services.AddControllers();            
-            builder.Services.AddEndpointsApiExplorer();            
+            builder.Services.AddEndpointsApiExplorer();
+            builder.WebHost.ConfigureKestrel(options =>
+            {
+                options.ListenLocalhost(5001); // o cualquier puerto libre
+            });
+
 
             var app = builder.Build();
             
