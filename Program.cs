@@ -87,7 +87,7 @@ namespace RDOXMES.Login
             builder.Services.AddEndpointsApiExplorer();
             builder.WebHost.ConfigureKestrel(options =>
             {
-                options.ListenLocalhost(5001); // o cualquier puerto libre
+                options.ListenLocalhost(5002); // o cualquier puerto libre
             });
 
             var app = builder.Build();
