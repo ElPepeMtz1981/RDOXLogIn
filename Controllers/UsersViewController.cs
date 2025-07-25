@@ -17,10 +17,24 @@ namespace Loging.Controllers
         }
 
         [Authorize]
-        [HttpGet]
+        [HttpGet("All")]
         public async Task<IActionResult> GetUsers()
         {
             var users = await _context.Users.ToListAsync();
+            return Ok(users);
+        }
+        
+        [Authorize(Roles = "SysAdmin")]
+        [HttpGet("NameAndRol")]
+        public async Task<IActionResult> GetUserAndRol()
+        {
+            var users = await _context.Users
+                        .Select(u => new {
+                            u.Name,
+                            u.Rol
+                        })
+                        .ToListAsync();
+
             return Ok(users);
         }
     }
