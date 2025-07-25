@@ -9,13 +9,13 @@ using System.Text;
 namespace RDOXMES.Loging;
 
 [ApiController]
-[Route("api/[controller]")]
-public class AuthController : ControllerBase
+[Route("api/login")]
+public class LogInController : ControllerBase
 {
     private readonly ViewUserDbContext _context;
     private readonly IConfiguration _configuration;
 
-    public AuthController(ViewUserDbContext context, IConfiguration configuration)
+    public LogInController(ViewUserDbContext context, IConfiguration configuration)
     {
         _context = context;
         _configuration = configuration;

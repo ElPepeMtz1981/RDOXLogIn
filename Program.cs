@@ -11,6 +11,10 @@ namespace RDOXMES.Login
     {
         public static void Main(string[] args)
         {
+            Console.WriteLine("By SoftwarechidoMx");
+            Console.WriteLine();
+            Console.WriteLine("Start Program.cs");
+
             var jwtKey = "RDOXMES_ClaveJWT_SuperSegura_2025_Produccion_ClaveExtra";
             var builder = WebApplication.CreateBuilder(args);
             

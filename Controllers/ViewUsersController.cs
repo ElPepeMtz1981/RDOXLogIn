@@ -3,21 +3,21 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using RDOXMES.Login;
 
-namespace Loging.Controllers
+namespace RDOXMES.ViewUsers
 {
     [ApiController]
-    [Route("api/[controller]")]
-    public class UsersViewController : ControllerBase
+    [Route("api/viewusers")]
+    public class ViewUsersController : ControllerBase
     {
         private readonly ViewUserDbContext _context;
 
-        public UsersViewController(ViewUserDbContext context)
+        public ViewUsersController(ViewUserDbContext context)
         {
             _context = context;
         }
 
         [Authorize]
-        [HttpGet("All")]
+        [HttpGet("all")]
         public async Task<IActionResult> GetUsers()
         {
             var users = await _context.Users.ToListAsync();
@@ -25,7 +25,7 @@ namespace Loging.Controllers
         }
         
         [Authorize(Roles = "SysAdmin")]
-        [HttpGet("NameAndRol")]
+        [HttpGet("nameandrol")]
         public async Task<IActionResult> GetUserAndRol()
         {
             var users = await _context.Users
