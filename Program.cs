@@ -83,8 +83,20 @@ namespace RDOXMES.Login
                 });
             });
                                                
-            builder.Services.AddControllers();            
+            builder.Services.AddControllers();
+
+            builder.Services.AddCors(options =>
+            {
+                options.AddPolicy("AllowAllOrigins", policy =>
+                {
+                    policy.AllowAnyOrigin()
+                          .AllowAnyHeader()
+                          .AllowAnyMethod();
+                });
+            });
+
             builder.Services.AddEndpointsApiExplorer();
+
             builder.WebHost.ConfigureKestrel(options =>
             {
                 options.ListenLocalhost(5002); // o cualquier puerto libre
@@ -95,6 +107,8 @@ namespace RDOXMES.Login
             app.UseSwagger();
 
             app.UseSwaggerUI();
+
+            app.UseHttpsRedirection();
 
             app.UseHttpsRedirection();
 
