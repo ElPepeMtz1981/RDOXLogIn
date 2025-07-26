@@ -108,6 +108,8 @@ namespace RDOXMES.Login
 
             app.UseSwaggerUI();
 
+            app.UseCors("AllowAllOrigins");
+
             app.UseHttpsRedirection();
 
             app.UseHttpsRedirection();
