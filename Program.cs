@@ -26,7 +26,7 @@ namespace RDOXMES.Login
                .AddJsonFile($"appsettings.{builder.Environment.EnvironmentName}.json", optional: true)
                .AddEnvironmentVariables();
 
-            var connection = builder.Configuration.GetConnectionString("Users");
+            var connection = builder.Configuration.GetConnectionString("UsersDB");
             if (string.IsNullOrWhiteSpace(connection) || connection.Contains("USE_ENV_VARIABLE"))
             {
                 builder.Logging.AddConsole();
@@ -110,9 +110,7 @@ namespace RDOXMES.Login
 
             app.UseCors("AllowAllOrigins");
 
-            app.UseHttpsRedirection();
-
-            app.UseHttpsRedirection();
+            app.UseHttpsRedirection();            
 
             app.UseAuthentication();
 

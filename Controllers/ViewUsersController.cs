@@ -16,7 +16,7 @@ namespace RDOXMES.ViewUsers
             _context = context;
         }
 
-        [Authorize]
+        [Authorize(Roles = "SysAdmin")]
         [HttpGet("all")]
         public async Task<IActionResult> GetUsers()
         {
