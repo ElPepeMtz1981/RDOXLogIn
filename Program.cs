@@ -26,7 +26,7 @@ namespace RDOXMES.Login
                .AddJsonFile($"appsettings.{builder.Environment.EnvironmentName}.json", optional: true)
                .AddEnvironmentVariables();
 
-            var connection = builder.Configuration.GetConnectionString("UsersDB");
+            var connection = builder.Configuration.GetConnectionString("LogInDB");
             if (string.IsNullOrWhiteSpace(connection) || connection.Contains("USE_ENV_VARIABLE"))
             {
                 builder.Logging.AddConsole();
@@ -37,7 +37,7 @@ namespace RDOXMES.Login
                 Console.WriteLine($"conections string loaded: {connection.Split(';')[0]}");
             }
 
-            builder.Services.AddDbContext<ViewUserDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("Users")));
+            builder.Services.AddDbContext<ViewUserDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("LogInDB")));
             builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddJwtBearer(opt =>
                 {
